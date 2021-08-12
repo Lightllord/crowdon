@@ -1,0 +1,10 @@
+@use '../../node_modules/@angular/material/index' as mat;
+@include mat.core();
+
+@mixin theming($theme, $typography: null) {
+  @include mat.all-component-themes($theme);
+  @if $typography {
+    @include mat.all-component-typographies($typography);
+  }
+  /* include mixin from component */
+}
