@@ -29,8 +29,7 @@ export class ThemeService {
       }
       localStorage.setItem('crowDonat.theme', this.themeName);
     }
-    this.selectTheme(this.themeName).then(res => {
-      console.log('it works');
+    this.selectTheme(this.themeName).then(() => {
     })
   }
 

@@ -14,7 +14,6 @@ export class AppComponent {
 
   selectTheme(themeName: string) {
     this.themeService.selectTheme(themeName).then(() => {
-      console.log('hell yeah it works');
     });
   }
 }
