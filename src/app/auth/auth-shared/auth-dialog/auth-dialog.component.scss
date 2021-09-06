@@ -1,0 +1,26 @@
+:host {
+  &.auth-dialog {
+
+  }
+}
+
+.auth-dialog {
+  &__platforms-row {
+    display: flex;
+  }
+
+  &__platform-link {
+    display: inline-block;
+
+    &--twitch {
+      background: #6442a3;
+    }
+  }
+
+  &__platform-icon {
+    &--twitch {
+      height: 27px;
+      background: url('~src/assets/twitch.svg') center no-repeat;
+    }
+  }
+}

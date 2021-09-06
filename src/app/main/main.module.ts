@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { MainRoutingModule } from './main-routing.module';
 import { MainContainerComponent } from './main-container/main-container.component';
 import { MainHeaderComponent } from './main-header/main-header.component';
+import { GlobalSharedModule } from '../shared/global-shared/global-shared.module';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AuthSharedModule } from '../auth/auth-shared/auth-shared.module';
 
 
 @NgModule({
@@ -12,8 +15,12 @@ import { MainHeaderComponent } from './main-header/main-header.component';
     MainHeaderComponent
   ],
   imports: [
-    CommonModule,
-    MainRoutingModule
+    GlobalSharedModule,
+    MainRoutingModule,
+    MatMenuModule,
+    MatDialogModule,
+    AuthSharedModule
   ]
 })
-export class MainModule { }
+export class MainModule {
+}

@@ -1,0 +1,12 @@
+<h1>Войдите через предпочитаемую платформу</h1>
+<div class="auth-dialog__platforms-row">
+  <a mat-fab
+     class="auth-dialog__platform-link auth-dialog__platform-link--twitch"
+     [href]="'https://id.twitch.tv/oauth2/authorize?client_id=alxis8wh32e01992dq5ysrfds6uev0' +
+      '&redirect_uri=http://localhost:4201/auth/' +
+       '&response_type=code' +
+        '&scope=user:read:email user:read:follows'">
+    <mat-icon class="auth-dialog__platform-icon auth-dialog__platform-icon--twitch"></mat-icon>
+  </a>
+</div>
+

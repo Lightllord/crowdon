@@ -1,4 +1,7 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ThemeService } from '../../theme.service';
+import { MatDialog } from '@angular/material/dialog';
+import { AuthDialogComponent } from '../../auth/auth-shared/auth-dialog/auth-dialog.component';
 
 @Component({
   selector: 'app-main-header',
@@ -6,14 +9,35 @@ import { Component, HostBinding, OnInit } from '@angular/core';
   styleUrls: ['./main-header.component.scss'],
   host: {
     'class': 'main-header',
-    '[class.main-header--default]': 'isDefault'
   }
 })
 export class MainHeaderComponent implements OnInit {
-  isDefault: boolean = true;
+  isDark: boolean = true;
 
-  constructor() { }
+  constructor(private themeService: ThemeService, private dialog: MatDialog) {
+  }
 
   ngOnInit(): void {
+    this.isDark = this.themeService.themeName === 'dark-theme';
+  }
+
+  themeChanging = false;
+
+  changeTheme() {
+    if (!this.themeChanging) {
+      this.themeChanging = true;
+      this.themeService.selectTheme(this.isDark ? 'light-theme' : 'dark-theme').then(() => {
+        this.isDark = !this.isDark;
+      }).finally(() => {
+        this.themeChanging = false
+      });
+    }
+  }
+
+  openAuthDialog() {
+    const dialogRef = this.dialog.open(AuthDialogComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }

@@ -11,7 +11,7 @@ export const THEMES = [
   providedIn: 'root'
 })
 export class ThemeService {
-  private themeName = '';
+  public themeName = '';
   private renderer2: Renderer2;
   private htmlElement: HTMLElement | undefined;
 

@@ -1,2 +1,14 @@
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+  --padding-default: 16px;
+  --padding-large-default: 32px;
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--color-background);
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
