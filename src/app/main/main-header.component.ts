@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ThemeService } from '../../theme.service';
+import { ThemeService } from '../theme.service';
 import { MatDialog } from '@angular/material/dialog';
-import { AuthDialogComponent } from '../../auth/auth-shared/auth-dialog/auth-dialog.component';
+import { ClientRegistrationComponent } from '../auth/client-registration/client-registration.component';
 
 @Component({
   selector: 'app-main-header',
@@ -35,7 +35,7 @@ export class MainHeaderComponent implements OnInit {
   }
 
   openAuthDialog() {
-    const dialogRef = this.dialog.open(AuthDialogComponent);
+    const dialogRef = this.dialog.open(ClientRegistrationComponent);
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
